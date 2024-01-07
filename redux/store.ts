@@ -3,6 +3,7 @@ import themeReducer from './themeReducer';
 import authReducer from './authReducer';
 import profileReducer from './profileReducer';
 import { verifyAuth } from '@/firestore/firestoreService'
+import asyncReducer from './asyncReducer';
 
 
 const store = configureStore({
@@ -10,6 +11,7 @@ const store = configureStore({
         themes: themeReducer,
         auth: authReducer,
         profile: profileReducer,
+        async: asyncReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false,

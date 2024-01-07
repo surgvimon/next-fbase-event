@@ -11,7 +11,7 @@ const asyncReducer = createSlice({
             state.loading = true;
             state.error = null;
         },
-        asyncActionFinal: (state) =>{
+        asyncActionFinish: (state) =>{
             state.loading = false;
             state.error = null;
         },
@@ -21,5 +21,5 @@ const asyncReducer = createSlice({
         },
     },
 });
-export const { asyncActionStart, asyncActionFinal, asyncActionError } = asyncReducer.actions;
+export const { asyncActionStart, asyncActionFinish, asyncActionError } = asyncReducer.actions;
 export default asyncReducer.reducer;

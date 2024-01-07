@@ -4,16 +4,16 @@ const profileReducer = createSlice({
     name: 'profile',
     initialState: {
         currentUserProfile: null,
-        selectUserProfile: null,
+        selectedUserProfile: null,
     },
     reducers: {
         listenToCurrentUserProfile: (state, action) => {
             state.currentUserProfile = action.payload;
         },
-        listenToSelectUserProfile: (state, action) => {
-            state.selectUserProfile = action.payload;
+        listenToSelectedUserProfile: (state, action) => {
+            state.selectedUserProfile = action.payload;
         },
     },
 });
-export const { listenToCurrentUserProfile, listenToSelectUserProfile } = profileReducer.actions;
+export const { listenToCurrentUserProfile, listenToSelectedUserProfile } = profileReducer.actions;
 export default profileReducer.reducer;

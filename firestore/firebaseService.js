@@ -48,22 +48,34 @@ export function signOutFirebase() {
   }
   
 export async function socialLogin(selectedProvider) {
-    let provider;
-    if (selectedProvider === 'facebook') {
-        provider = new FacebookAuthProvider();
-    }
-    if (selectedProvider === 'google') {
-        provider = new GoogleAuthProvider();
-    }
-    try {
-        const result = await signInWithPopup(auth, provider);
-        console.log(result);
-        if (result._tokenResponse.isNewUser) {
-            await setUserProfileData(result.user);
-        }
-    } catch (error) {
-        // toast.error(error.message);
-        console.log(error.message);
-    }
+  let provider;
+  if (selectedProvider === 'facebook') {
+      provider = new FacebookAuthProvider();
   }
-  
+  if (selectedProvider === 'google') {
+      provider = new GoogleAuthProvider();
+  }
+  try {
+      const result = await signInWithPopup(auth, provider);
+      console.log(result);
+      if (result._tokenResponse.isNewUser) {
+          await setUserProfileData(result.user);
+      }
+  } catch (error) {
+      // toast.error(error.message);
+      console.log(error.message);
+  }
+}
+
+export function updateUserPassword(creds) {
+  const user = auth.currentUser;
+  console.log(`updateUserPassword :${creds.password} `)
+  return updatePassword(user, creds.password);
+}
+
+export function uploadToFirebaseStorage(file, filename) {
+  const user = auth.currentUser;
+  const storage = getStorage(app);
+  const storageRef = ref(storage, `${user.uid}/user_images/${filename}`);
+  return uploadBytesResumable(storageRef, file);
+}

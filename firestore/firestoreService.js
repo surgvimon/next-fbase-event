@@ -166,7 +166,6 @@ export async function updateUserProfilePhoto(downloadURL, filename) {
       url: downloadURL
     })
   } catch (error) {
-    console.log('fserror', error)
     throw error;
   }
 }

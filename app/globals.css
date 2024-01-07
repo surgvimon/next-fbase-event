@@ -99,11 +99,75 @@ a {
   }
 }
 
+ /**
+ * edit
+ */
+ .event-main-list .attendee {
+  background-color: #f0f2f5;
+}
+.event-detail-header-green .ant-list-header{
+  background-color: #87d068 !important;
+  border-radius: 3px 3px 0 0;
+}
+.event-detail-side-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
 .p-sticky {
   position: sticky;
   top: 0;
 }
 
 .container {
-  padding: 0;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+
+.container--narrow {
+  max-width: 960px;
+}
+
+.main-layout {
+  min-height: calc(100% - 50px) !important;
+}
+
+nt-spin  {
+  display: flex !important;
+}
+
+.ant-list-bordered .ant-list-item.events-filter,
+.ant-list-bordered .ant-list-item.events-calendar {
+  padding: 0 !important;
+}
+.ant-list-header {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* layout */
+.flex {
+  display: flex;
+}
+
+.sss{
+  justify-content: space-between;
+}
+
+.confirmModal {
+  font-size: 25px;
+  color: #faad14;
+}
+
+.facebookIcons,
+.googleIcons {
+  font-size: 17px;
+}
+
+/**  nave */
+.ant-menu-overflow-item-rest {
+  margin-left: auto;
 }
